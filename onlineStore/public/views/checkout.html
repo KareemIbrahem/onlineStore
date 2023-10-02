@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store</title>
+    <link rel="stylesheet" href="../stylesheets/root.css" />
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="../stylesheets/styles.css" />
+    <link rel="stylesheet" href="../stylesheets/cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../stylesheets/checkout.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="second-nav">
+        <div class="dropdown-bars">
+          <button onclick="expanddropbtn()" class="dropbtn-bars">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="dropdown-content-bars">
+            <button class="closebtn">&times;</button>
+            <a href="login.html">Sign in</a>
+            <a href="shop.html">Store</a>
+          </div>
+        </div>
+        <div class="m-navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Store</a></li>
+          </ul>
+        </div>
+        <h3 class="logo">Oberlo</h3>
+        <div class="s-navbar">
+          <ul>
+            <li></li>
+
+            <li class="user">
+              <button>
+                <a style="color: black" href="/views/login.html"
+                  ><i class="fa-solid fa-user"></i
+                ></a>
+              </button>
+            </li>
+            <li>
+              <button class="expandCart" class="cart">
+                <i class="fa-solid fa-bag-shopping" value="0"></i>
+              </button>
+            </li>
+            <li>
+              <div class="search-box">
+                <input type="text" class="searchBar" placeholder="Search..." />
+                <a href="#">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-result">
+        <div class="search-result-product-container"></div>
+      </div>
+
+      <div class="cart-container">
+        <div class="cart-header">
+          <div class="center">
+            <span>Shopping Cart</span>
+            <button class="expandCart">X</button>
+          </div>
+          <div class="center2">
+            <i class="fa-solid fa-truck"></i>
+            <span>Free shipping on orders over $150</span>
+          </div>
+        </div>
+        <div id="cart-product-container" class="cart-product-container"></div>
+        <div class="cart-footer">
+          <div class="spox">
+            <div class="spc">
+              <span class="tax"
+                >Tax included and shipping calculated at checkout</span
+              >
+            </div>
+            <div class="spc">
+              <span class="tax">$</span
+              ><span id="checkout-price" class="tax"></span>
+            </div>
+          </div>
+          <a class="checkout" href="checkout.html"><span>Checkout</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="form-container">
+      <form action="#" class="form">
+        <h2 class="text-center">Cart</h2>
+        <div class="progressbar">
+          <div class="progress" id="progress"></div>
+          <div
+            class="progress-step progress-step-active"
+            data-title="Cart"
+          ></div>
+          <div class="progress-step" data-title="Info"></div>
+          <div class="progress-step" data-title="Payment"></div>
+        </div>
+        <div class="form-step form-step-active">
+          <div
+            id="checkout-product-container"
+            class="cart-product-container"
+          ></div>
+          <div class="button-align">
+            <a class="boton btn-prev" style="pointer-events: none">Previous</a>
+            <a class="boton btn-next">Next</a>
+          </div>
+        </div>
+        <div class="form-step">
+          <div class="form-grid">
+            <div class="input-group">
+              <label for="first_name">First Name:</label>
+              <input type="text" name="first_name" id="first_name" />
+            </div>
+            <div class="input-group">
+              <label for="last_name">Last Name:</label>
+              <input type="text" name="last_name" id="last_name" />
+            </div>
+            <div class="input-group">
+              <label for="mobile_number">Mobile number:</label>
+              <input type="number" name="mobile_number" id="mobile_number" />
+            </div>
+            <div class="input-group">
+              <label for="address1">Address:</label>
+              <input type="text" name="address1" id="address1" />
+            </div>
+          </div>
+          <div class="button-align">
+            <a class="boton btn-prev">Previous</a>
+            <a class="boton btn-next" style="margin-left: auto" id="Stripe"
+              >Checkout</a
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="../javascript/checkout.js"></script>
+    <script src="../javascript/navbar.js"></script>
+    <script src="../javascript/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/cart.js" type="module"></script>
+  </body>
+</html>

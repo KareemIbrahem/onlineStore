@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/root.css" />
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="../stylesheets/styles.css" />
+    <link rel="stylesheet" href="../stylesheets/cart.css" />
+    <link rel="stylesheet" href="../stylesheets/shop.css" />
+    <link rel="stylesheet" href="../stylesheets/product.css" />
+    <link rel="stylesheet" href="../stylesheets/navbar.css" />
+    <link rel="stylesheet" href="../stylesheets/footer.css" />
+
+    <title>product</title>
+  </head>
+  <body>
+    <nav>
+      <div class="second-nav">
+        <div class="dropdown-bars">
+          <button onclick="expanddropbtn()" class="dropbtn-bars">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="dropdown-content-bars">
+            <button class="closebtn">&times;</button>
+            <a>Sign in</a>
+            <a href="/views/index.html">Home</a>
+            <a href="/views/Store.html">Store</a>
+          </div>
+        </div>
+        <div class="m-navbar">
+          <ul>
+            <li><a href="/views/index.html">Home</a></li>
+            <li><a href="/views/Store.html">Store</a></li>
+          </ul>
+        </div>
+        <h3 class="logo">Oberlo</h3>
+        <div class="s-navbar">
+          <ul>
+            <li>
+              <a
+                id="adminPanelNav"
+                class="d-none"
+                href="/admin"
+                style="color: black"
+                >Admin Panel</a
+              >
+            </li>
+
+            <li class="user">
+              <button>
+                <a style="color: black" href="/views/login.html"
+                  ><i class="fa-solid fa-user"></i
+                ></a>
+              </button>
+            </li>
+            <li>
+              <button class="expandCart" class="cart">
+                <i class="fa-solid fa-bag-shopping" value="0"></i>
+              </button>
+            </li>
+            <li>
+              <div class="search-box">
+                <input type="text" class="searchBar" placeholder="Search..." />
+                <a href="#">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-result">
+        <div class="search-result-product-container"></div>
+      </div>
+
+      <div class="cart-container">
+        <div class="cart-header">
+          <div class="center">
+            <span>Shopping Cart</span>
+            <button class="expandCart">X</button>
+          </div>
+          <div class="center2">
+            <i class="fa-solid fa-truck"></i>
+            <span>Free shipping on orders over $150</span>
+          </div>
+        </div>
+        <div id="cart-product-container" class="cart-product-container"></div>
+        <div class="cart-footer">
+          <div class="spox">
+            <div class="spc">
+              <span class="tax"
+                >Tax included and shipping calculated at checkout</span
+              >
+            </div>
+            <div class="spc">
+              <span class="tax">$</span
+              ><span id="checkout-price" class="tax"></span>
+            </div>
+          </div>
+          <a class="checkout" href="checkout.html"><span>Checkout</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="single-product-container"></div>
+    </div>
+    <footer>
+      <div class="first-footer">
+        <p>
+          GIFT CARDS AVAILABLE
+          <span><i class="fa-solid fa-gift"></i></span>
+        </p>
+      </div>
+
+      <div class="row second-footer">
+        <div class="col-3 list">
+          <h6>Browse</h6>
+          <div class="list">
+            <a>All products</a>
+            <a>About us</a>
+            <a>Blog</a>
+          </div>
+        </div>
+        <div class="col-3">
+          <h6>Help</h6>
+          <div class="list">
+            <a>FAQ</a>
+            <a>Terms & conditions</a>
+            <a>Contact us</a>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <h6>About</h6>
+          <p>
+            Our story began in 2001 in a small studio in the middle of nowhere.
+            With only one desk and next to no free time, our brand was born. Our
+            passion for unique design and collaboration brought our vision, and
+            products, to life.
+          </p>
+        </div>
+        <div class="col-3">
+          <h6>Contact</h6>
+          <p>store@email.com</p>
+          <div class="icons">
+            <a href="https://www.instagram.com/"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="https://twitter.com/home"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../javascript/product.js"></script>
+
+    <script src="../javascript/navbar.js"></script>
+    <script src="../javascript/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/shop.js" type="module"></script>
+    <script src="../javascript/cart.js" type="module"></script>
+  </body>
+</html>

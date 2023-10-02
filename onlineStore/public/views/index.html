@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oberlo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../stylesheets/root.css" />
+    <link rel="stylesheet" href="../stylesheets/main.css" />
+    <link rel="stylesheet" href="../stylesheets/cart.css" />
+    <link rel="stylesheet" href="../stylesheets/navbar.css" />
+    <link rel="stylesheet" href="../stylesheets/footer.css" />
+  </head>
+  <body>
+    <nav style="z-index: 3000000">
+      <div class="second-nav">
+        <div class="dropdown-bars">
+          <button onclick="expanddropbtn()" class="dropbtn-bars">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="dropdown-content-bars">
+            <button class="closebtn">&times;</button>
+            <a href="/views/index.html">Home</a>
+            <a href="/views/login.html">Sign in</a>
+            <a href="/views/shop.html">Store</a>
+            <a>Blog</a>
+            <a style="color: red">Sale</a>
+          </div>
+        </div>
+        <div class="m-navbar">
+          <ul>
+            <li><a href="/views/index.html">Home</a></li>
+
+            <li><a href="/views/shop.html">Store</a></li>
+          </ul>
+        </div>
+        <h3 class="logo" style="cursor: pointer">Oberlo</h3>
+        <div class="s-navbar">
+          <ul style="z-index: 1000">
+            <li>
+              <a
+                id="adminPanelNav"
+                class="d-none"
+                href="/admin"
+                style="color: black"
+                >Admin Panel</a
+              >
+            </li>
+
+            <li class="user">
+              <button>
+                <a style="color: black" href="/views/login.html"
+                  ><i class="fa-solid fa-user"></i
+                ></a>
+              </button>
+            </li>
+            <li style="z-index: 1000">
+              <button class="expandCart" class="cart">
+                <i class="fa-solid fa-bag-shopping" value="0"></i>
+              </button>
+            </li>
+            <li>
+              <div class="search-box">
+                <input type="text" class="searchBar" placeholder="Search..." />
+                <a href="#">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-result">
+        <div class="search-result-product-container"></div>
+      </div>
+
+      <div class="cart-container">
+        <div class="cart-header">
+          <div class="center">
+            <span>Shopping Cart</span>
+            <button class="expandCart">X</button>
+          </div>
+          <div class="center2">
+            <i class="fa-solid fa-truck"></i>
+            <span>Free shipping on orders over $150</span>
+          </div>
+        </div>
+        <div id="cart-product-container" class="cart-product-container"></div>
+        <div class="cart-footer">
+          <div class="spox">
+            <div class="spc">
+              <span class="tax"
+                >Tax included and shipping calculated at checkout</span
+              >
+            </div>
+            <div class="spc">
+              <span class="tax">$</span
+              ><span id="checkout-price" class="tax"></span>
+            </div>
+          </div>
+          <a class="checkout" href="/views/checkout.html"
+            ><span>Checkout</span></a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid my-5">
+      <section class="hero">
+        <div
+          id="carouselExampleDark"
+          class="carousel carousel-dark slide carousel-fade"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active item" data-bs-interval="10000">
+              <div class="image-container">
+                <img
+                  src="../assets/photo-1.avif"
+                  class="d-block w-100 scale-down-center"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-caption d-md-block carousel-content">
+                <h5>Less harm</h5>
+                <p>
+                  we are contiually pushing to reduce our footprint by choosing
+                  recycling or natural fibers and non-toxic natural dye
+                  processes
+                </p>
+
+                <div class="buttons">
+                  <button
+                    onclick="window.location = '/views/shop.html'"
+                    type="button"
+                  >
+                    Shop All
+                  </button>
+                  <button
+                    onclick="window.location = '/views/shop.html'"
+                    type="button"
+                  >
+                    Shop Now
+                  </button>
+                </div>
+                <div class="carousel-btn d-none d-md-flex">
+                  <button
+                    class=""
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class=""
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item" data-bs-interval="2000">
+              <div class="image-container">
+                <img
+                  src="../assets/photo-3.avif"
+                  class="d-block w-100 scale-down-center"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-caption d-md-block carousel-content">
+                <h5>Be Responsible</h5>
+                <p>
+                  as a small growing company, it's not always easy but we will
+                  seek the most socially responsible manufacturing options
+                </p>
+                <div class="buttons">
+                  <button type="button">Shop All</button>
+                  <button type="button">Shop Now</button>
+                </div>
+                <div class="carousel-btn d-none d-md-flex">
+                  <button
+                    class=""
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class=""
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item">
+              <div class="image-container">
+                <img
+                  src="../assets/photo-2.avif"
+                  class="d-block w-100 scale-down-center"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-caption d-md-block carousel-content">
+                <h5>less but better</h5>
+                <p>
+                  This simple phrase is one of our guiding principles. Focus on
+                  the most important elements of each garment and let go of
+                  everything superfluous.
+                </p>
+                <div class="buttons">
+                  <button type="button">Shop All</button>
+                  <button type="button">Shop Now</button>
+                </div>
+                <div class="carousel-btn d-none d-md-flex">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="collections">
+        <div class="info">
+          <h4 class="title">Collections</h4>
+          <div class="fields">
+            <button type="button" id="new-season">New season</button>
+            <button type="button" id="teens-kits">Teens & Knits</button>
+            <button type="button" id="on-sale">On sale</button>
+          </div>
+        </div>
+
+        <div class="products-container" id="product-card"></div>
+      </section>
+
+      <section class="social-media">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="content">
+                <h3><i class="fa-brands fa-facebook"></i></h3>
+                <h4>
+                  "Oh man! I am so happy with my new garms. Well made,
+                  responsibly sourced and a great fit too. I shall be back next
+                  payday for more!"
+                </h4>
+                <p>Kareem</p>
+                <p>Facbook</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="content">
+                <h3><i class="fa-brands fa-instagram"></i></h3>
+                <h4>
+                  "Oh man! I am so happy with my new garms. Well made,
+                  responsibly sourced and a great fit too. I shall be back next
+                  payday for more!"
+                </h4>
+                <p>Kareem</p>
+                <p>Instagram</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="content">
+                <h3><i class="fa-brands fa-twitter"></i></h3>
+                <h4>
+                  "Oh man! I am so happy with my new garms. Well made,
+                  responsibly sourced and a great fit too. I shall be back next
+                  payday for more!"
+                </h4>
+                <p>Kareem</p>
+                <p>Twitter</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="philosophy">
+        <img src="../assets/photo-2.avif" alt="background-1" />
+        <div class="philosophy-overlay">
+          <h1>Oberlo</h1>
+          <h4>
+            'Little do ye know your own blessedness; for to travel hopefully is
+            a better thing than to arrive, and the true success is to labour'
+          </h4>
+
+          <p>Robert Louis Stevenson</p>
+
+          <button type="button">OUR PHILOSOPHY</button>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="first-footer">
+        <p>
+          GIFT CARDS AVAILABLE
+          <span><i class="fa-solid fa-gift"></i></span>
+        </p>
+      </div>
+
+      <div class="row second-footer">
+        <div class="col-3 list">
+          <h6>Browse</h6>
+          <div class="list">
+            <a>All products</a>
+            <a>About us</a>
+            <a>Blog</a>
+          </div>
+        </div>
+        <div class="col-3">
+          <h6>Help</h6>
+          <div class="list">
+            <a>FAQ</a>
+            <a>Terms & conditions</a>
+            <a>Contact us</a>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <h6>About</h6>
+          <p>
+            Our story began in 2001 in a small studio in the middle of nowhere.
+            With only one desk and next to no free time, our brand was born. Our
+            passion for unique design and collaboration brought our vision, and
+            products, to life.
+          </p>
+        </div>
+        <div class="col-3">
+          <h6>Contact</h6>
+          <p>store@email.com</p>
+          <div class="icons">
+            <a href="https://www.instagram.com/"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="https://twitter.com/home"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../javascript/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/index.js" type="module"></script>
+    <script src="../javascript/navbar.js"></script>
+  </body>
+</html>
