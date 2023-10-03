@@ -1,6 +1,5 @@
 import usersModel from "../models/usersModel.js";
 import auth from "../middlewares/authentication.js";
-import googleVerify from "../services/googleVerify.js";
 
 import yup from "yup";
 
